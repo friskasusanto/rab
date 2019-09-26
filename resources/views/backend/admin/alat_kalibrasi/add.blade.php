@@ -45,7 +45,7 @@
 			                </div>
 			                @endif
 							<div class="col-lg-offset-1 col-md-10">
-								<form class="form form-validate floating-label" novalidate="novalidate" method="POST" action= "{{action('backend\AdminController@add_alatkantor')}}">
+								<form class="form form-validate floating-label" novalidate="novalidate" method="POST" action= "{{action('backend\AdminController@add_alatkalibrasi')}}">
 									{{ csrf_field() }}
 									<div class="card">
 										<div class="card-body">
