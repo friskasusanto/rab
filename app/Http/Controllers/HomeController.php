@@ -27,10 +27,10 @@ class HomeController extends Controller
     }
     public function register_login()
     {
-        return view('backend.register');
+        return view('auth.register');
     }
     public function login_login()
     {
-        return view('backend.login');
+        return view('auth.login');
     }
 }

@@ -12,14 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('backend.login');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/register_home', 'HomeController@register_login')->name('home_register');
-Route::get('/', 'HomeController@login_login')->name('home_register');
+// Route::get('/', 'HomeController@login_login')->name('home_register');
 
 //admin
 	//PENGADAAN ALAT KANTOR DAN RUMAHTANGGA
