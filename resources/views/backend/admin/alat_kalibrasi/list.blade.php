@@ -40,15 +40,15 @@
 										<td>{{$l->anggaran_bulanan_jml_rp}}</td>
 										<td>{{$l->anggaran_prediksi_pengeluaran_jml_rp}}</td>
 										<td class="text-right">
-											<a href="{{action('backend\AdminController@edit_alatkantor', $l->id)}}">
+											<a href="{{action('backend\AdminController@edit_alatkalibrasi', $l->id)}}">
 												<button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="fa fa-pencil"></i></button>
 											</a>
 
-											<a href="{{action('backend\AdminController@delete_alatkantor', $l->id)}}">
+											<a href="{{action('backend\AdminController@delete_alatkalibrasi', $l->id)}}">
 												<button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="fa fa-trash-o"></i></button>
 											</a>
 
-											<a href="{{action('backend\AdminController@detail_alatkantor', $l->id)}}">
+											<a href="{{action('backend\AdminController@detail_alatkalibrasi', $l->id)}}">
 												<button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="See Detail"><i class="md-remove-red-eye"></i></button>
 											</a>
 										</td>
