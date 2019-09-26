@@ -18,7 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/register', 'HomeController@register')->name('home_register');
+Route::get('/register_home', 'HomeController@register_login')->name('home_register');
+Route::get('/login_home', 'HomeController@login_login')->name('home_register');
 
 //admin
 	//PENGADAAN ALAT KANTOR DAN RUMAHTANGGA

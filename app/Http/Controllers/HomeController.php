@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('backend.layouts.index');
     }
+    public function register_login()
+    {
+        return view('backend.register');
+    }
+    public function login_login()
+    {
+        return view('backend.login');
+    }
 }
