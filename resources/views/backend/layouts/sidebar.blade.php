@@ -12,6 +12,17 @@
 						</li><!--end /menu-li -->
 						<!-- END DASHBOARD -->
 
+						<!-- Supplier -->
+						<li class="gui-folder">
+							<a>
+								<div class="gui-icon"><span class="glyphicon glyphicon-list-alt"></span></div>
+								<span class="title">Supplier</span>
+							</a>
+							<ul>
+								<li><a href="{{action('backend\AdminController@index_supplier')}}"><span class="title">List</span></a></li>
+								<li><a href="{{action('backend\AdminController@add_supplier')}}"><span class="title">Add</span></a></li>
+							</ul>
+						</li>
 						<!-- Pengadaan alat kantor dan rumah tangga -->
 						<li class="gui-folder">
 							<a>

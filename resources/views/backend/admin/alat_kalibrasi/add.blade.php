@@ -50,6 +50,14 @@
 									<div class="card">
 										<div class="card-body">
 											<div class="form-group">
+												<div class="col-sm-12">
+						                          <select name="status" type="text" class="form-control">
+						                              <option value="">--status--</option>
+						                              <option value= "1">{{$a}}</option>
+						                          </select>
+							                    </div>
+							                </div>
+											<div class="form-group">
 												<input type="text" class="form-control" id="Name1" name="uraian" required data-rule-minlength="2">
 												<label for="Name1">Uraian</label>
 											</div>

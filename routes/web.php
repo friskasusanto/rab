@@ -22,6 +22,15 @@ Route::get('/register_home', 'HomeController@register_login')->name('home_regist
 // Route::get('/', 'HomeController@login_login')->name('home_register');
 
 //admin
+
+	//SUPPLIER
+	Route::get('/supplier', 'backend\AdminController@index_supplier')->name('supplier');
+	Route::get('/add_supplier', 'backend\AdminController@add_supplier')->name('add_supplier');
+	Route::post('/add_supplier', 'backend\AdminController@tambah_supplier')->name('tambah_supplier');
+	Route::get('/delete_supplier/{id}', 'backend\AdminController@delete_supplier')->name('delete_supplier');
+	Route::get('/edit_supplier/{id}', 'backend\AdminController@edit_supplier')->name('edit_supplier');
+	Route::post('/store_supplier/{id}', 'backend\AdminController@store_supplier')->name('store_supplier');
+
 	//PENGADAAN ALAT KANTOR DAN RUMAHTANGGA
 	Route::get('/alatkantor_rumahtangga_list', 'backend\AdminController@list_alatkantor')->name('alatkantor_rumahtangga_list');
 	Route::get('/alatkantor_rumahtangga', 'backend\AdminController@index')->name('alatkantor_rumahtangga');

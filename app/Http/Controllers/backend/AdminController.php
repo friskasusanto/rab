@@ -10,10 +10,59 @@ use App\Pengadaan_alat_angkut_darat_takbermotor;
 use App\Pengadaan_alat_kalibrasi;
 use App\Pengadaan_meja_dan_kursi_kerja_pejabat;
 use App\Belanja_modal_pengadaan_gedung_blud;
+use App\Supplier;
 use Session;
 
 class AdminController extends Controller
 {
+//SUPPLIER
+    public function index_supplier (){
+        $list = Supplier::get();
+        return view('backend.admin.supplier.list', compact('list'));
+    }
+    public function add_supplier (){
+        return view('backend.admin.supplier.add', compact('list'));
+    }
+    public function tambah_supplier (Request $request){
+        $supplier = new Supplier;
+        $supplier->status = $request->status;
+        $supplier->supplier = $request->supplier;
+        $supplier->save();
+
+        Session::flash("flash_notification", [
+                "level" => "success",
+                "message" => "Data Berhasil di Simpan"
+            ]);
+        return redirect()->back();
+    }
+    public function delete_supplier (Request $request, $id)
+    {
+        $delete = Supplier::find($id);
+        $delete->delete();
+        Session::flash("flash_notification", [
+                        "level"=>"danger",
+                        "message"=>"Data Berhasil di Hapus."
+            ]);
+        return redirect()->back();
+    }
+    public function edit_supplier (Request $request, $id)
+    {
+        $edit = Supplier::find($id);
+        return view ('backend.admin.supplier.edit', compact('edit'));
+    }
+    public function store_supplier (Request $request, $id)
+    {
+        $supplier = Supplier::find($id);
+        $supplier->status = $request->status;
+        $supplier->supplier = $request->supplier;
+        $supplier->save();
+
+        Session::flash("flash_notification", [
+                "level" => "success",
+                "message" => "Data Berhasil di Ubah"
+            ]);
+        return redirect()->back();
+    }
 
 //ALAT KANTOR DAN RUMAH TANGGA
 	public function list_alatkantor ()
@@ -276,7 +325,8 @@ class AdminController extends Controller
 	}
     public function index_alatkalibrasi ()
     {
-    	return view('backend.admin.alat_kalibrasi.add');
+        $list = Pengadaan_alat_kalibrasi::get();
+    	return view('backend.admin.alat_kalibrasi.add', compact('list'));
     }
 
     public function add_alatkalibrasi (Request $request)

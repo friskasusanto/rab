@@ -15,7 +15,9 @@ class KantorDanRumahtanggaRepair extends Migration
     {
         Schema::table('pengadaan_alat_kantor_dan_rumahtanggas', function (Blueprint $table) {
             $table->string('status')->default(0)->comment('1. kasi/kasubag, 2. kabid/kabag, 3. direktur, 4. supplier, 5. wherehouse, 6. admin, 7. kembali_wherehouse, 8. kembali_kabid/kabag, 9. kembali_kasi/kasubag, 10. kembali_admin');
-            $table->string('supplier')->default(0);
+            $table->integer('supplier')->unsigned(); 
+            
+            $table->foreign('supplier')->references('id')->on('suppliers');
         });
     }
 
